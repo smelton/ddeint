@@ -16,7 +16,7 @@ class DelayFunc:
         elif len(Y.shape) ==1:
             Y = np.array(Y).reshape(self.itpr.y.shape[0],1)
         else:
-            raise TypeError("Incorrect dimension of Y")
+            print "Incorrect dimension of Y"
         newy = np.hstack([self.itpr.y, Y])
         self.itpr = scipy.interpolate.interp1d( newx, newy, bounds_error = False, fill_value = self.f(self.t0) )
  
